@@ -103,10 +103,13 @@ class _MyHomePageState extends State<MyHomePage> {
       //
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(begin: Alignment.topRight, colors: <Color>[
-          Color(0xfff5d415),
-          Color(0xfff5f5f5),
-        ])),
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: FractionalOffset(0.5, 0.2),
+                colors: <Color>[
+              Color(0xfff5d415),
+              Color(0xfff5f5f5),
+            ])),
 
         /*children: [
           Container(
