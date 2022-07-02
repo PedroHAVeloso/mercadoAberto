@@ -34,14 +34,35 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        shadowColor: Colors.transparent,
         backgroundColor: Color(0xfff5d415),
-        title: Text(
+        title: SizedBox(
+          width: 350,
+          height: 35,
+          child: TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+              filled: true,
+              fillColor: Colors.white,
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white, width: 1.0),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white, width: 1.0),
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              labelText: 'Buscar no Mercado Aberto',
+            ),
+          ),
+        ),
+        /*Text(
           "Mercado Aberto",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-        ),
+        ),*/
         centerTitle: true,
         leading: Builder(
           builder: (BuildContext context) {
@@ -59,8 +80,47 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {},
           ),
         ],
+        bottom: PreferredSize(
+          child: Container(
+            color: Color(0xfff5d415),
+            height: 30.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.location_on),
+                Text(
+                  "Enviar para Marcelo Queiroz - Rua Jardim Paulista, 56",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          preferredSize: Size.fromHeight(20),
+        ),
       ),
-      body: Center(),
+      //
+      body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(begin: Alignment.topRight, colors: <Color>[
+          Color(0xfff5d415),
+          Color(0xfff5f5f5),
+        ])),
+
+        /*children: [
+          Container(
+            child: Material(
+              child: ListTile(
+                leading: Icon(Icons.location_pin),
+                title: const Text('Enviar para (???)'),
+                tileColor: Color(0xfff5d415),
+                /*trailing: Icon(Icons.more_vert),*/
+              ),
+            ),
+          ),
+          ]*/
+      ),
     );
   }
 }
